@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.xworkz.jobapplication.dto.JobApplicationDTO;
+import com.xworkz.jobapplication.dto.JobApplicationServletDTO;
 
 @WebServlet(loadOnStartup = 20, urlPatterns = "/job")
-public class JobApplication extends HttpServlet {
+public class JobApplicationServlet extends HttpServlet {
 
-	List<JobApplicationDTO> list = new ArrayList<JobApplicationDTO>();
+	List<JobApplicationServlet> list = new ArrayList<JobApplicationServlet>();
 
-	public JobApplication() {
+	public JobApplicationServlet() {
 		System.out.println("Running defult constr");
 	}
 
@@ -34,7 +34,15 @@ public class JobApplication extends HttpServlet {
 		String qualification = req.getParameter("Qualification");
 		String passout = req.getParameter("Year Of Passout");
 		String university = req.getParameter("University");
-		String skills = req.getParameter("select");
+		String[] skills = req.getParameterValues("select");
+		
+		for (String string : skills) {
+			System.out.println("Selected   " + skills);
+			
+			
+
+		}
+		// String skills = req.getParameter("select");
 		String salary = req.getParameter("ExceptedSalary");
 		String exp = req.getParameter("Experience");
 		String proof = req.getParameter("Id Proof");
@@ -42,8 +50,8 @@ public class JobApplication extends HttpServlet {
 
 		System.out.println("name".concat(name) + "email".concat(email) + "num".concat(name) + "altNum".concat(name)
 				+ "gender".concat(name) + "address".concat(name) + "qualification".concat(name)
-				+ "passout".concat(passout) + "university".concat(university) + "skills".concat(skills)
-				+ "salary".concat(salary) + "exp".concat(exp) + "proof".concat(proof) + "proofNum".concat(proofNum));
+				+ "passout".concat(passout) + "university".concat(university) + "skills" + "salary".concat(salary)
+				+ "exp".concat(exp) + "proof".concat(proof) + "proofNum".concat(proofNum));
 
 		resp.setContentType("text/html");
 		PrintWriter writer = resp.getWriter();
@@ -59,8 +67,8 @@ public class JobApplication extends HttpServlet {
 				.append("<br>").append("ID PROOF NUMBER  :").append(proofNum).append("<br>").append("</body>")
 				.append("</html>");
 
-		JobApplicationDTO jobApplicationDTO = new JobApplicationDTO(name, email, num, altNum, gender, address,
-				qualification, passout, university, skills, salary, exp, proof, proofNum);
+		JobApplicationServletDTO jobApplicationDTO = new JobApplicationServletDTO(name, email, num, altNum, gender,
+				address, qualification, passout, university, skills, salary, exp, proof, proofNum);
 		System.out.println(list.add(jobApplicationDTO));
 
 	}
