@@ -1,7 +1,7 @@
 package com.xworkz.companyServlet.DTO;
 
 public class CompanyServletDTO {
-
+	
 	private String companyName;
 	private String founder;
 	private String since;
