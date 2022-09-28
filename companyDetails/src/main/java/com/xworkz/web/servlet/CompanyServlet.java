@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.xworkz.companyServlet.DTO.CompanyServletDTO;
 
-@WebServlet(loadOnStartup = 10, urlPatterns = "/company,Details")
+@WebServlet(loadOnStartup = 10, urlPatterns = {"/company","/Details"})
 public class CompanyServlet extends HttpServlet {
 	
 	List<CompanyServletDTO> company=new ArrayList<CompanyServletDTO>(); 
@@ -80,20 +80,34 @@ public class CompanyServlet extends HttpServlet {
 		for (CompanyServletDTO companyServletDTO : company) {
 			
 		
-				color.append("<td>")
+				color.append("<tr>")
                
-				.append("</td>").append("<td>")
+				.append("<td>")
+				.append(companyServletDTO.getCompanyName())
+				.append("</td>")
+				.append("<br>")
+				.append("<td>")
+				.append(companyServletDTO.getFounder())
+				.append("</td>")
+				.append("<br>")
+				.append("<td>")
+				.append(companyServletDTO.getSince())
+				.append("</td>")
+				.append("<br>")
+				.append("<td>")
+				.append(companyServletDTO.getEmployee())
+				.append("</td>")
+				.append("<br>")
+				.append("<td>")
+				.append(companyServletDTO.getAddress())
+				.append("</td>")
+				.append("<br>")
+				.append("<td>")
+				.append(companyServletDTO.getBusiness())
+				.append("</td>")
 
-				.append("</td>").append("<td>")
-
-				.append("</td>").append("<td>")
-
-				.append("</td>").append("<td>")
-
-				.append("</td>").append("<td>")
-
-				.append("</td>");
-		
+				
+				.append("</tr>");
 		
 		
 	};
