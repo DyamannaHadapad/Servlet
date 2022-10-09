@@ -36,59 +36,66 @@ public class Collection {
 		list.add("Tripura");
 		list.add("Uttara pradesh");
 		list.add("Uttarakanda");
+		for (String ref : list) {
+			System.out.println("All State Names  : " + "  " + ref);
+
+		}
+		System.out.println("All State Names  : " + "  " + list);
 
 		list.stream().filter(state -> state.endsWith("a")).forEach((elements) -> {
-			System.out.println(elements);
+			System.out.println("states endswith 'a' letter   :" + "  " + elements);
 		});
 
 		System.out.println("=====================================");
 
 		list.stream().filter(state -> state.startsWith("k")).forEach((elements) -> {
-			System.out.println(elements);
+			System.out.println("states startswith 'k' letter   :" + "  " + elements);
 		});
 
 		System.out.println("=====================================");
 
 		list.stream().filter(state -> state.contains("l")).forEach((elements) -> {
-			System.out.println(elements);
+			System.out.println("state contains 'l' letter    :" + "  " + elements);
 		});
 		System.out.println("=====================================");
 		list.stream().filter(state -> state.contains("d")).forEach((elements) -> {
-			System.out.println(elements);
+			System.out.println("state contains 'd' letter    :" + "  " + elements);
 		});
 		System.out.println("=====================================");
 		list.stream().filter(state -> state.contains("r")).forEach((elements) -> {
-			System.out.println(elements);
+			System.out.println("state contains 'r' letter    :" + "  " + elements);
 		});
 		System.out.println("=====================================");
 		list.stream().filter(state -> state.contains("h")).forEach((elements) -> {
-			System.out.println(elements);
+			System.out.println("states contains  'h' letter   :" + "  " + elements);
 		});
-		System.out.println("=====================================");
-		list.stream().map(state -> state.toUpperCase()).forEach((elements) -> {
-			System.out.println(elements);
-		});
-		System.out.println("=====================================");
-		list.stream().map(state -> state.toLowerCase()).forEach((elements) -> {
-			System.out.println(elements);
-		});
+
 		System.out.println("=====================================");
 
 		list.stream().filter(state -> state.length() > 10).forEach((elements) -> {
-			System.out.println(elements);
+			System.out.println("above 10 charecters    :" + "  " + elements);
 		});
 		System.out.println("=====================================");
 		list.stream().filter(state -> state.length() < 5).forEach((elements) -> {
-			System.out.println(elements);
+			System.out.println("below 5 charecters   :" + "  " + elements);
 		});
 		System.out.println("=====================================");
 
-		list.stream().map(state -> new StringBuilder(state).reverse()).forEach((elements) -> {
-			System.out.println(elements);
+		list.stream().forEach((elements) -> {
+			System.out.println("LowerCase   :" + "  " + elements.toLowerCase());
 		});
 		System.out.println("=====================================");
-		
-		
+		list.stream().forEach((elements) -> {
+			System.out.println("UpperCase   :" + "  " + elements.toUpperCase());
+		});
+
+		System.out.println("=====================================");
+
+		list.stream().forEach((elements) -> {
+			System.out.println("reversed   :" + "  " + new StringBuilder(elements).reverse());
+		});
+
+		System.out.println("=====================================");
 	}
 
 }
