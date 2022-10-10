@@ -136,6 +136,7 @@ public class HouseRunner {
 			}
 			return a;
 		}).forEach((e) -> System.out.println(e));
+		
 		System.out.println("=========================================================================================");
 
 	}
