@@ -93,24 +93,51 @@ public class HouseRunner {
 
 		System.out.println("=========================================================================================");
 
-//		houseDTOs.stream().sorted((ref)->{
-//			.forEach((e)-> System.out.println(e))
-//		});
-
 		houseDTOs.stream().filter((ref) -> ref.getLoan())
 				.sorted((c1, c2) -> c2.getOwnerName().compareTo(c1.getOwnerName()))
 				.forEach((e) -> System.out.println(e));
 
 		System.out.println("=========================================================================================");
 
-		houseDTOs.stream().sorted((c1, c2) -> c2.getOwnerName().compareTo(c1.getOwnerName())).filter((ref) -> ref.getLoan())
+		houseDTOs.stream().filter((ref) -> ref.getLoan() == false)
+				.sorted((c1, c2) -> c2.getOwnerName().compareTo(c1.getOwnerName()))
 				.forEach((e) -> System.out.println(e));
 
 		System.out.println("=========================================================================================");
 
-//		houseDTOs.stream().sorted((c1,c2)->{
-//			return Boolean.compare(c2.getOwnerName(), c1.getLoan());
-//		});
+		houseDTOs.stream().filter((ref) -> ref.getOwningType() == OwningType.LEASE)
+				.forEach((e) -> System.out.println(e));
+
+		System.out.println("=========================================================================================");
+
+		houseDTOs.stream().filter((ref) -> ref.getType() == Type.APARTMENT).forEach((e) -> System.out.println(e));
+
+		System.out.println("=========================================================================================");
+
+		houseDTOs.stream().filter((ref) -> ref.getType() == Type.VILLA).forEach((e) -> System.out.println(e));
+
+		System.out.println("=========================================================================================");
+
+		houseDTOs.stream().sorted((c1, c2) -> {
+			Integer a = c1.getType().compareTo(c2.getType());
+			if (a == 0) {
+				return c1.getOwningType().compareTo(c2.getOwningType());
+			}
+
+			return a;
+		}).forEach((e) -> System.out.println(e));
+
+		System.out.println("=========================================================================================");
+
+		houseDTOs.stream().sorted((c1, c2) -> {
+			int a = c2.getName().compareTo(c1.getName());
+			if (a == 0) {
+				return c2.getId().compareTo(c1.getId());
+			}
+			return a;
+		}).forEach((e) -> System.out.println(e));
+		System.out.println("=========================================================================================");
+
 	}
 
 }

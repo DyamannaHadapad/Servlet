@@ -22,7 +22,7 @@ public class HouseDTO {
 		this.ownerName = ownerName;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
