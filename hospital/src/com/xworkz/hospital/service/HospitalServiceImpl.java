@@ -19,15 +19,15 @@ public class HospitalServiceImpl implements HospitalService {
 		int since = dto.getSince();
 		String specialization = dto.getSpecalization();
 
-		if (id > 0 && id < 20) {
+		if (id > 0 && id < 100) {
 			System.out.println("Id IS valid");
-			if (name != null && name.length() > 4 && name.length() < 20) {
+			if (name != null && name.length() > 1 && name.length() < 50) {
 				System.out.println("name is valid");
-				if (founder != null && founder.length() > 4 && founder.length() < 20) {
+				if (founder != null && founder.length() > 1 && founder.length() < 50) {
 					System.out.println("founder is valid");
 					if (since > 1900 && since < 2023) {
 						System.out.println("since is valid");
-						if (specialization != null && specialization.length() > 3 && specialization.length() < 10) {
+						if (specialization != null && specialization.length() > 1 && specialization.length() < 50) {
 							System.out.println("specialization iS valid");
 							HospitalRepository hospitalRepository = new HospitalRepositoryImpl();
 							hospitalRepository.save(dto);

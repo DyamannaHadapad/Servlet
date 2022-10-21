@@ -8,8 +8,7 @@ public class GarageRunner {
 
 	public static void main(String[] args) {
 
-		GarageDTO dto = new GarageDTO("Ncar Motars", "Ningappa", "car garage", "Guledgudda", 15);
-
+		GarageDTO dto=new GarageDTO(15, "NcarMotars", "Ningappa", "Car Repair", "Guledgudd");
 		GarageService garageService = new GarageServiceImpl();
 		garageService.validateAndSave(dto);
 	}

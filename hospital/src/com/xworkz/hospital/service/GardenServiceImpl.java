@@ -12,7 +12,7 @@ public class GardenServiceImpl implements GardenService {
 
 	@Override
 	public boolean validateAndSave(GardenDTO dto) {
-		int people = dto.getNoOfPeople();
+		int people = dto.getId();
 		String name = dto.getName();
 		String located = dto.getLocated();
 		Double sqFeet = dto.getSqFeet();

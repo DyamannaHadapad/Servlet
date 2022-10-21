@@ -13,10 +13,11 @@ import lombok.ToString;
 @ToString
 public class GarageDTO {
 
+	private int id;
 	private String name;
 	private String owner;
 	private String type;
 	private String place;
-	private int noOfEmployes;
+	
 
 }

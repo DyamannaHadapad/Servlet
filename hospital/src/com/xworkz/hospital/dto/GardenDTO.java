@@ -14,7 +14,7 @@ import lombok.ToString;
 
 public class GardenDTO {
 
-	private int noOfPeople;
+	private int id;
 	private String name;
 	private String located;
 	private Double timings;

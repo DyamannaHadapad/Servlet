@@ -11,6 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+
 public class HospitalDTO {
 
 	private int id;

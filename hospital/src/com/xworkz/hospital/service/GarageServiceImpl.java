@@ -19,7 +19,7 @@ public class GarageServiceImpl implements GarageService {
 		String owner = dto.getOwner();
 		String type = dto.getType();
 		String place = dto.getPlace();
-		int emp = dto.getNoOfEmployes();
+		int emp = dto.getId();
 
 		if (name != null && name.length() > 5 && name.length() < 40) {
 			System.out.println("name is valid");
